@@ -5,8 +5,8 @@ CACHE_DIR=$2
 BUILDPACK_DIR="$(dirname "$(dirname "$0")")"
 
 mkdir -p "$BUILD_DIR/bin/"
-cp "proxy-amd64-linux" "$BUILD_DIR/bin/"
-ls -l "$BUILD_DIR/bin/proxy-amd64-linux"
+#cp "proxy-amd64-linux" "$BUILD_DIR/bin/"
+#ls -l "$BUILD_DIR/bin/proxy-amd64-linux"
 
 echo '-----> proxy-buildpack: Added proxy to app/bin'
 
