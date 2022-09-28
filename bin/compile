@@ -1,16 +1,11 @@
 #!/bin/sh
 
-indent() {
-  sed -u 's/^/       /'
-}
+BUILD_DIR=$1
+CACHE_DIR=$2
+BUILDPACK_DIR="$(dirname "$(dirname "$0")")"
 
-echo "-----> Found a hello.txt"
+mkdir -p "$BUILD_DIR/bin/"
+cp "proxy-amd64-linux" "$BUILD_DIR/bin/"
 
-# if hello.txt is empty, abort the build
-if [ ! -s $1/hello.txt ]; then
-  echo "hello.txt was empty" | indent
-  exit 1
-fi
+echo '-----> proxy-buildpack: Added proxy to app/bin'
 
-# replace hello with goodbye in a new file
-cat $1/hello.txt | sed -e "s/[Hh]ello/Goodbye/g" > $1/goodbye.txt
