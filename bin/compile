@@ -5,6 +5,7 @@ CACHE_DIR=$2
 BUILDPACK_DIR="$(dirname "$(dirname "$0")")"
 
 mkdir -p "$BUILD_DIR/bin/"
+#TODO: download from s3
 cp "inspector-app" "$BUILD_DIR/bin/"
 
 echo '-----> proxy-buildpack: Added inspector-app to app/bin'
